@@ -1,0 +1,28 @@
+Package: methometR
+Type: Package
+Title: methometR: Extracting methylation information from Optical Genome Maps
+Version: 0.0.90
+Author: Surajit Bhattacharya, Seth Berger, Hayk Barseghyan and Eric Vilain
+Authors@R: 
+    c(person(given = "Surajit",
+             family = "Bhattacharya",
+             role = c("aut", "cre"),
+             email = "sbhattach2@childrensnational.org"))
+Description: Short-read bisulfite sequencing (SRBS) and Illumina Epic methylation arrays (IEMA) have helped in identifying epigenetic signatures in research and clinic. Although, due to technical limitations, they do not provide long-range haplotype specific methylation states, but rather detect signals that are averaged for specific genomic positions. These limitations can be alleviated with a novel dual-label optical genome mapping (DL-OGM) technology for detection epigenetic changes. The method relies on differential labeling of high molecular weight DNA. Long DNA molecules are nicked with BspQI endonuclease and labeled with red fluorescent nucleotides, followed by treatment with M.TaqI methyltransferase that attaches green fluorescent cofactor onto non-methylated (hypomethylated) CpGs in TCGA sequences throughout the genome. Though the technology, identifies and visually characterizes regions of hypomethylations, no tool is available that performs quantification of the signals, to differentiate between an affected and a control allele/condition.We have built a R based tool, methometR, that quantifies/normalizes the methylation signals to evaluate differential methylation patterns between cases and controls.methometR is built using R, and ggplots is used for visualization. methometR functions in 3 steps. First, extract and map green labels to reference genome, to identify hypomethylated labels, across the whole genome. Next,quantify /normalize the methylation levels of a region based on coverage of molecules that span the region, Finally, visualization of methylation levels, in the form of barplots, across user specified region range, to differentiate patterns between cases and controls.
+Depends:
+    R (>= 4.1),
+Imports:
+    tidyverse,
+    logr,
+	knitr,
+    data.table
+Suggests:
+    rmarkdown,
+    yaml
+VignetteBuilder:
+    knitr
+License: Modified BSD 3-clause
+Encoding: UTF-8
+biocViews: Software, WorkflowStep, GenomeAssembly, VariantAnnotation
+RoxygenNote: 7.1.1.9001
+LazyData: true
